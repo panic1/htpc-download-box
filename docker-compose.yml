@@ -136,34 +136,34 @@ services:
       - ${MOVIES}:/movies # movies folder
       - ${TV}:/tv # tv shows folder
 
-#  lidarr:
-#    container_name: lidarr
-#    image: linuxserver/lidarr:latest
-#    environment:
-#      - PUID=${PUID} # default user id, defined in .env
-#      - PGID=${PGID} # default group id, defined in .env
-#      - TZ=${TZ} # timezone, defined in .env 
-#    volumes:
-#      - ${CONFIG}/lidarr:/config
-#      - ${MUSIC}:/music
-#      - ${DOWNLOADS}:/downloads
-#    network_mode: host
-#    restart: unless-stopped
-#
-#  readarr:
-#    container_name: readarr
-#    image: linuxserver/readarr:develop
-#    environment:
-#      - PUID=${PUID} # default user id, defined in .env
-#      - PGID=${PGID} # default group id, defined in .env
-#      - TZ=${TZ} # timezone, defined in .env 
-#    volumes:
-#      - ${CONFIG}/readarr:/config
-#      - ${BOOKS}:/books
-#      - ${DOWNLOADS}:/downloads
-#    network_mode: host
-#    restart: unless-stopped
-#
+  lidarr:
+    container_name: lidarr
+    image: linuxserver/lidarr:latest
+    environment:
+      - PUID=${PUID} # default user id, defined in .env
+      - PGID=${PGID} # default group id, defined in .env
+      - TZ=${TZ} # timezone, defined in .env 
+    volumes:
+      - ${CONFIG}/lidarr:/config
+      - ${MUSIC}:/music
+      - ${DOWNLOADS}:/downloads
+    network_mode: host
+    restart: unless-stopped
+
+  readarr:
+    container_name: readarr
+    image: linuxserver/readarr:develop
+    environment:
+      - PUID=${PUID} # default user id, defined in .env
+      - PGID=${PGID} # default group id, defined in .env
+      - TZ=${TZ} # timezone, defined in .env 
+    volumes:
+      - ${CONFIG}/readarr:/config
+      - ${BOOKS}:/books
+      - ${DOWNLOADS}:/downloads
+    network_mode: host
+    restart: unless-stopped
+
 #  mylar3:
 #    container_name: mylar3
 #    image: linuxserver/mylar3:latest
@@ -173,7 +173,7 @@ services:
 #      - TZ=${TZ} # timezone, defined in .env 
 #    volumes:
 #      - ${CONFIG}/mylar3:/config
-#      - ${COMICS:/comics
+#      - ${COMICS}:/comics
 #      - ${DOWNLOADS}:/downloads
 #    network_mode: host
 #    restart: unless-stopped
